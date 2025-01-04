@@ -11,8 +11,8 @@ import java.io.IOException;
 public class FriendsListApplication extends Application {
 
     /// We create a JavaFX Application by writing a class that
-    /// This FriendsListApplication extends javafx.application.Application. (as above)
-    /// The Application class is started in its own JavaFX Application thread by
+    /// extends javafx.application.Application. (as above)
+    /// The Application is started in its own JavaFX Application thread by
     /// calling the launch() method.
     /// The start() method is then called by the JavaFX runtime.
     /// [Application class API](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html)
@@ -22,6 +22,9 @@ public class FriendsListApplication extends Application {
         launch(); // call static JavaFX Application method
     }
 
+    /// start() is called by the JavaFX runtime system, after our JavaFX Application
+    /// is launched.  This is the entry point to our program where we load UI and Controllers
+    ///
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -34,7 +37,7 @@ public class FriendsListApplication extends Application {
         /// to the Model so that the Controller can access it.) (Dependency Injection!)
         FriendsListModel friendsListModel = new FriendsListModel();
 
-        /// Get a reference to the Controller.  The Controller for the App
+        /// Get a reference to the Controller.  The controller for the App
         /// was declared in the FXML code and was instantiated (created) by JavaFX.
         FriendsListController controller = loader.getController();  // get a reference to the controller
         controller.setModel(friendsListModel); // Inject Dependency (dependency on the Model)

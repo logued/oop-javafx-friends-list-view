@@ -71,7 +71,7 @@ public class FriendsListModel {
      * Convenience method, that initializes the FriendsListModel
      * with an initial set of data so that we can test the app.
      * It is called from the constructor.
-     * (This could be more suitable done in a unit test)
+     * (This could possibly be more suitable done in a unit test)
      */
     private void initializeWithTestData() {
         this.addFriend("Luke", "R2-D2");
