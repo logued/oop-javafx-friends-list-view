@@ -45,6 +45,12 @@ public class FriendsListModel {
     public void removeFriend(String personsName, String friendsName) {
         if (map.containsKey(personsName)) {
             map.get(personsName).remove(friendsName);  // get list of names, and remove the one specified
+
+            // if a person no longer has any friends,
+            // remove the person from the map.
+            if(map.get(personsName).isEmpty()) {
+                map.remove(personsName);
+            }
         }
         // else - do nothing.
     }

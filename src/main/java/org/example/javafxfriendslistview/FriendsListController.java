@@ -74,7 +74,7 @@ public class FriendsListController {
         findPersonAndShowFriends();
     }
 
-    /// Actions to be taken when someone clicks on Show Friends, or
+    /// Actions to be taken when user clicks on Show Friends button, or
     /// presses ENTER when the cursor is in the TextField.
     /// Extract the name from the TextField, search for the person,
     /// if found, display the persons friends.
