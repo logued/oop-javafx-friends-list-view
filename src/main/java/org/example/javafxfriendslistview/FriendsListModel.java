@@ -1,4 +1,4 @@
-package org.example.javafxfriendslistview;    // Jan 2024
+package org.example.javafxfriendslistview;    // Jan 2025
 
 import java.util.ArrayList;
 import java.util.HashMap;

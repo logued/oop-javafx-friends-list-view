@@ -1,4 +1,4 @@
-package org.example.javafxfriendslistview;    // Jan 20204
+package org.example.javafxfriendslistview;    // Jan 2025
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -45,15 +45,16 @@ public class FriendsListController {
     }
 
     /// The Constructor is called first, then @FXML fields are populated,
-    /// then initialize() is called. Constructor has no access to FXML fields,
-    /// but initialize() does due to the sequence of execution.
+    /// then initialize() is called. The Constructor has no access to FXML fields,
+    /// but initialize() does, due to the sequence of execution.
     @FXML
     private void initialize() {
         System.out.println("Initializing FriendsListController - initialize() called.");
 
         // Set a listener to handle an "Enter" keypress on the name text field.
         // This can't be done in the constructor as the nameTextField will not have
-        // been loaded, but initialize() is called after the UI controls are created.
+        // been loaded, but can be done in initialize() as it called after the UI
+        // controls are created.
         //
         nameTextField.setOnKeyReleased(event -> {
             if (event.getCode() == KeyCode.ENTER){
@@ -85,6 +86,7 @@ public class FriendsListController {
 
         String name = nameTextField.getText();  // get the name to search for
 
+        // some basic validation
         if( name==null || name.isEmpty() ) {
             messageLabel.setText("Please enter a name");
             listView.getItems().clear();  // clear listview
@@ -104,7 +106,7 @@ public class FriendsListController {
         /// In this example, the Model (FriendsListModel) returns a clone(copy) of the
         /// friends list, so when we clear the ListView, the *copy* of the friends list is also cleared,
         /// but the underlying source of the friends list (in the Map) is not cleared, as this
-        /// controller class is dealing wit a copy of the list and has no access to the Map
+        /// controller class is dealing with a copy of the list and has no access to the Map
         /// or to its contents.  We have not leaked any references from our Model out to the GUI.
         /// This is good practice.
 
@@ -119,7 +121,7 @@ public class FriendsListController {
     /// (which is known as the Model in the MODEL-VIEW-CONTROLLER Architecture)
     /// The model is instantiated in the main App and is passed into this controller
     /// as a dependency using the setModel() method below.
-    /// This is called "Dependency Injection" (DI), because, instead of creating
+    /// This is called "Dependency Injection" (DI), because, instead of instantiating
     /// the FriendsListModel here, we "inject" a reference to a Model that is
     /// created elsewhere. (This reduces the coupling between the two classes).
 

@@ -1,4 +1,4 @@
-package org.example.javafxfriendslistview;   // Jan 2024
+package org.example.javafxfriendslistview;   // Jan 2025
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -47,5 +47,7 @@ public class FriendsListApplication extends Application {
         stage.setScene(scene);
         stage.setTitle("Friends Finder Application");
         stage.show();
+        // Once the stage (GUI) is displayed, the program is then driven by
+        // events that are captured in the GUI (e.g. Button click, text entry etc).
     }
 }
